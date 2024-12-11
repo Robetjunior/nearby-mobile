@@ -1,6 +1,6 @@
 import { Stack } from "expo-router"
 import { colors } from "@/styles/theme"
-
+import { GestureHandlerRootView } from "react-native-gesture-handler"
 import {
     useFonts,
     Rubik_600SemiBold,
@@ -22,11 +22,15 @@ export default function Layout() {
         return <Loading />
     }
 
-    return <Stack 
-            screenOptions={{ 
+    return (
+        <GestureHandlerRootView>
+            <Stack 
+                screenOptions={{ 
                     headerShown: false,
                     contentStyle: { backgroundColor: colors.gray[100]
-                }
-            }}
-        />
+                    }
+                }}
+            />
+        </GestureHandlerRootView>
+        )
 }
